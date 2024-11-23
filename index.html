@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="./Css/styles.css" />
   </head>
   <body>
-    <header class="header container">
-      <nav class="header-nav">
+    <header class="header">
+      <div class="header-container"><nav class="header-nav">
         <div class="header-logo">
           <a href="/"
-            ><img src="./Images/logo.svg" alt="Логотип сучасної пекарні"
+            ><img src="./Images/logo.svg" alt="Логотип"
           /></a>
         </div>
         <ul class="header-menu">
@@ -21,18 +21,18 @@
           <li><a class="link" href="#location-section">Контакти</a></li>
         </ul>
         <div class="header-icons">
+          <button class="modal-btn-open phone" type="button">
+            <svg class="header-icon phone socials" width="27" height="30">
+            <use href="./Images/icons.svg#icon-phone"></use>
+          </svg>
+        </button>
           <a href="https://www.instagram.com/eudjdub/" target="_blank"
-            ><svg class="socials" width="27" height="30">
-              <use href="./Images/icons.svg#icon-phone"></use>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/eudjdub/" target="_blank"
-            ><svg class="socials" width="16" height="28">
+            ><svg class="header-icon inst socials" width="16" height="28">
               <use href="./Images/icons.svg#icon-facebook"></use>
             </svg>
           </a>
           <a href="https://www.instagram.com/eudjdub/" target="_blank"
-            ><svg class="socials" width="25" height="25">
+            ><svg class="header-icon facebook socials" width="25" height="25">
               <use href="./Images/icons.svg#icon-instagramm"></use>
             </svg>
           </a>
@@ -46,15 +46,13 @@
             <h1 class="hero-title">
               Косметологічна клініка<span class="accent">Beauty Zone</span>
             </h1>
-            <button class="button" type="button">Замовити дзвінок</button>
+            <button class="button modal-btn-open" type="button">Замовити дзвінок</button>
             <p class="hero-text">
               Запишись та отримай безкоштовну консультацію нашого косметолога
             </p>
           </div>
-          <div class="invisible-item">
-            <p>sjdhxjhssssssxjisssijsxxxxxxxksxoooxkos skodxxxkossxsko</p>
-          </div>
         </div>
+      </div>
       </section>
       <section class="info-section" id="info-section">
         <div class="info-container container">
@@ -76,16 +74,25 @@
           </div>
           <div class="info-images">
             <img
-              class="info-image-first"
+              class="info-image first"
+              src="./Images/advantages-section-women-after.jpg"
+              alt="After"
+            />
+            <img
+              class="info-image second"
               src="./Images/advantages-section-women-beforer.jpg"
               alt="Before"
             />
-            <img
-              class="info-image-second"
-              src="./Images/advantages-section-women-beforer.jpg"
-              alt="After"
-            />
           </div>
+          <svg class="star first" width="64" height="64">
+            <use href="./Images/Star.svg#icon-Stars"></use>
+          </svg>
+          <svg class="star second" width="40" height="40">
+            <use href="./Images/Star.svg#icon-Stars"></use>
+          </svg>
+          <svg class="star third" width="16" height="16">
+            <use href="./Images/Star.svg#icon-Stars"></use>
+          </svg>
         </div>
       </section>
       <section class="advantages-section" id="advantages-section">
@@ -160,7 +167,7 @@
                 </li>
               </ul>
             </div>
-            <button class="carousel-button" type="button">
+            <button class="carousel-button rotate" type="button">
               <svg width="16" height="16">
                 <use href="./Images/icons.svg#icon-Arrow"></use>
               </svg>
@@ -183,10 +190,56 @@
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
             <div class="location-card">
-              <h4 class="location-subtitle">
-                Запишіться <span class="accent">безкоштовно</span> та отримайте
-                подарунок
-              </h4>
+              <div><p class="modal-text">
+                Запишіться <span class="accent">безкоштовно</span> та отримайте подарунок
+              </p>
+              <form name="modal-form" autocomplete="off">
+                <div class="form-field">
+                  <label class="form-label visually-hidden" for="user-name">
+                    Ваше ім'я та прізвище
+                  </label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="user-name"
+                    name="user-name"
+                    placeholder="Ваше ім'я та прізвище"
+                    minlength="2"
+                    required
+                    pattern="^[Є-ЯҐа-їґА-ЯЁа-яё']+\s[Є-ЯҐа-їґА-ЯЁа-яё']+$"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label visually-hidden" for="user-tel">Ваш номер телефону</label>
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="user-tel"
+                    name="user-tel"
+                    placeholder="Ваш номер телефону"
+                    required
+                    pattern="^\+[0-9]{12}$"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label visually-hidden" for="user-email">Ваша електронна пошта</label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    placeholder="Ваша електронна пошта"
+                    required
+                    pattern="^\S+@\S+\.\S+$"
+                  />
+                </div>
+              
+                <button class="form-button button" type="submit">Записатись безкоштовно</button>
+                <p class="form-terms">
+                  Натискаючи на кнопку я погоджуюсь
+                  <a class="form-terms-link" href="#">з політикою конфіденційності</a>
+                </p>
+              </form></div>
             </div>
           </div>
         </div>
@@ -240,21 +293,17 @@
             </li>
             <div class="adress-icons">
               <li class="adress-socials">
-                <a
-                  class="icon"
-                  href="https://www.instagram.com/eudjdub/"
-                  target="_blank"
-                  ><svg width="27" height="30">
-                    <use href="./Images/icons.svg#icon-phone"></use>
-                  </svg>
-                </a>
+                <button class="modal-btn-open phone" type="button">
+                  <svg class="icon adress-icon phone socials" width="27" height="30">
+                  <use href="./Images/icons.svg#icon-phone"></use>
+                </svg>
               </li>
               <li class="adress-socials">
                 <a
                   class="icon"
                   href="https://www.instagram.com/eudjdub/"
                   target="_blank"
-                  ><svg width="16" height="28">
+                  ><svg class="adress-icon inst" width="16" height="28">
                     <use href="./Images/icons.svg#icon-facebook"></use>
                   </svg>
                 </a>
@@ -264,7 +313,7 @@
                   class="icon"
                   href="https://www.instagram.com/eudjdub/"
                   target="_blank"
-                  ><svg width="25" height="25">
+                  ><svg class="adress-icon facebook" width="25" height="25">
                     <use href="./Images/icons.svg#icon-instagramm"></use>
                   </svg>
                 </a>
@@ -280,5 +329,65 @@
         </address>
       </div>
     </footer>
+    <div class="backdrop is-hidden">
+      <div class="modal">
+        <button class="modal-close" type="button">
+          Close
+        </button>
+        <h2 class="modal-title">Замовити дзвінок</h2>
+        <p class="modal-text">
+          Запишіться <span class="accent">безкоштовно</span> та отримайте подарунок
+        </p>
+        <form name="modal-form" autocomplete="off">
+          <div class="form-field">
+            <label class="form-label visually-hidden" for="user-name">
+              Ваше ім'я та прізвище
+            </label>
+            <input
+              class="form-input"
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="Ваше ім'я та прізвище"
+              minlength="2"
+              required
+              pattern="^[Є-ЯҐа-їґА-ЯЁа-яё']+\s[Є-ЯҐа-їґА-ЯЁа-яё']+$"
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-label visually-hidden" for="user-tel">Ваш номер телефону</label>
+            <input
+              class="form-input"
+              type="tel"
+              id="user-tel"
+              name="user-tel"
+              placeholder="Ваш номер телефону"
+              required
+              pattern="^\+[0-9]{12}$"
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-label visually-hidden" for="user-email">Ваша електронна пошта</label>
+            <input
+              class="form-input"
+              type="email"
+              id="user-email"
+              name="user-email"
+              placeholder="Ваша електронна пошта"
+              required
+              pattern="^\S+@\S+\.\S+$"
+            />
+          </div>
+        
+          <button class="form-button button" type="submit">Записатись безкоштовно</button>
+          <p class="form-terms">
+            Натискаючи на кнопку я погоджуюсь
+            <a class="form-terms-link" href="#">з політикою конфіденційності</a>
+          </p>
+        </form>
+      </div>
+
+      <script src="./js/modal.js"></script>
+    </div>
   </body>
 </html>
